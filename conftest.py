@@ -14,7 +14,7 @@ from datetime import datetime
 import pytest
 from selenium import webdriver
 
-BASE_URL = os.getenv("BASE_URL", "https://www.saucedemo.com").rstrip("/")
+BASE_URL = os.getenv("BASE_URL", "https://parabank.parasoft.com/parabank").rstrip("/")
 PASTA_EVIDENCIAS = os.path.join(os.path.dirname(__file__), "evidencias")
 
 
