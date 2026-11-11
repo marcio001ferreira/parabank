@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 
 
 class LoginPage:
-    CAMPO_USUARIO = (By.ID, "user-name")
+    CAMPO_USUARIO = (By.ID, "Log In")
     CAMPO_SENHA = (By.ID, "password")
     BOTAO_LOGIN = (By.ID, "login-button")
     MENSAGEM_ERRO = (By.CSS_SELECTOR, "[data-test='error']")
