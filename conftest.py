@@ -5,7 +5,7 @@ Configuracao compartilhada pelos testes (o pytest carrega este arquivo sozinho).
 - Tira um print da tela quando um teste falha (pasta "evidencias").
 
 Variaveis de ambiente opcionais:
-  BASE_URL  endereco do sistema (padrao: https://www.saucedemo.com)
+  BASE_URL  endereco do sistema (padrao: https://parabank.parasoft.com/parabank)
   HEADLESS  use HEADLESS=1 para rodar sem abrir a janela do navegador
 """
 import os
@@ -14,7 +14,7 @@ from datetime import datetime
 import pytest
 from selenium import webdriver
 
-BASE_URL = os.getenv("BASE_URL", "https://www.saucedemo.com").rstrip("/")
+BASE_URL = os.getenv("BASE_URL", "https://parabank.parasoft.com/parabank").rstrip("/")
 PASTA_EVIDENCIAS = os.path.join(os.path.dirname(__file__), "evidencias")
 
 

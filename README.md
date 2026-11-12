@@ -6,9 +6,9 @@ O grupo parte daqui para construir o próprio trabalho.
 ## Lab 1 (04/11) — fazer o primeiro teste rodar
 
 ```bash
-python3 -m pip install -r requirements.txt
-python3 verificar_ambiente.py     # deve mostrar AMBIENTE OK
-python3 -m pytest
+python -m pip install -r requirements.txt
+python verificar_ambiente.py     # deve mostrar AMBIENTE OK
+python -m pytest
 ```
 
 O Chrome abre sozinho e o teste `test_ct01` passa no SauceDemo. Depois, adapte o kit ao case do grupo:

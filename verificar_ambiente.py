@@ -5,7 +5,7 @@ Como usar (em cada computador):
     pip install selenium pytest
     python verificar_ambiente.py
 
-Resultado esperado: o Chrome abre, acessa o SauceDemo e aparece "AMBIENTE OK".
+Resultado esperado: o Chrome abre, acessa o ParaBank e aparece "AMBIENTE OK".
 """
 import sys
 
@@ -35,15 +35,15 @@ def main():
         return 1
 
     try:
-        navegador.get("https://www.saucedemo.com")
+        navegador.get("https://parabank.parasoft.com/parabank/index.htm")
         titulo = navegador.title
     finally:
         navegador.quit()
 
-    if titulo == "Swag Labs":
+    if "ParaBank" in titulo:
         print("AMBIENTE OK")
         return 0
-    print(f"FALHOU: o site abriu com titulo inesperado ({titulo!r}). Verifique o acesso a saucedemo.com.")
+    print(f"FALHOU: o site abriu com titulo inesperado ({titulo!r}). Verifique o acesso a parabank.parasoft.com.")
     return 1
 
 
