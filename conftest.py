@@ -14,6 +14,9 @@ from datetime import datetime
 import pytest
 from selenium import webdriver
 
+from pages.contas_page import ContasPage
+from pages.register_page import RegisterPage, dados_cliente
+
 BASE_URL = os.getenv("BASE_URL", "https://parabank.parasoft.com/parabank").rstrip("/")
 PASTA_EVIDENCIAS = os.path.join(os.path.dirname(__file__), "evidencias")
 
@@ -49,6 +52,13 @@ def driver():
     navegador.implicitly_wait(2)
     yield navegador
     navegador.quit()
+
+@pytest.fixture
+def cliente_com_duas_contas(driver, base_url):
+    """Cadastra um cliente novo e abre uma 2a conta (SAVINGS).
+    Devolve (conta_origem, conta_destino)."""
+    RegisterPage(driver, base_url).abrir().cadastrar(dados_cliente())
+    return ContasPage(driver, base_url).abrir_segunda_conta()
 
 
 @pytest.hookimpl(hookwrapper=True)
